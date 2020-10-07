@@ -1,6 +1,6 @@
 {
   "name": "growi-plugin-section-ref",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "GROWI Plugin Section Reference",
   "keywords": [
     "growi",
@@ -14,7 +14,7 @@
     "lint:js:fix": "eslint **/*.{js,jsx} --fix",
     "lint": "npm-run-all -p lint:js lint:styles"
   },
-  "repository": "https://github.com/strvworks/growi-plugin-section-reference",
+  "repository": "https://github.com/strvworks/growi-plugin-section-ref",
   "author": "strvworks",
   "devDependencies": {
     "babel-eslint": "^10.0.2",
@@ -31,7 +31,6 @@
   },
   "peerDependencies": {},
   "dependencies": {
-    "mongoose": "^5.10.8",
-    "string-replace-async": "^2.0.0"
+    "mongoose": "^5.10.8"
   }
 }
