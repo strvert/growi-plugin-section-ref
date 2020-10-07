@@ -26,6 +26,7 @@ module.exports = (crowi) => {
     try {
       rev = await Revision.findById(page.revision).exec();
       b = rev.body;
+      console.log(rev);
 
       let found = false;
       b.replace(regexp, (m1) => {
@@ -34,7 +35,7 @@ module.exports = (crowi) => {
           let t = m1.split('\n');
           t.shift();
           t.pop();
-          markdown = t.join('\n');
+          markdown = t.join('\n').replace(/\[\^.+?\]/g, '');
           found = true;
         }
       });
