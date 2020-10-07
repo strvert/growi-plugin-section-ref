@@ -26,7 +26,6 @@ module.exports = (crowi) => {
     try {
       rev = await Revision.findById(page.revision).exec();
       b = rev.body;
-      console.log(rev);
 
       let found = false;
       b.replace(regexp, (m1) => {

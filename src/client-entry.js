@@ -1,6 +1,6 @@
 import DefineSection from './client/js/util/PreProcessor/DefineSection';
-import PreReferenceSection from './client/js/util/PreProcessor/PreReferenceSection';
-import ReferenceSection from './client/js/util/PreProcessor/ReferenceSection';
+import PreReferenceSection from './client/js/util/Interceptor/PreReferenceSectionInterceptor';
+import ReferenceSection from './client/js/util/Interceptor/ReferenceSectionInterceptor';
 
 export default (appContainer) => {
   appContainer.interceptorManager.addInterceptor(new PreReferenceSection());
