@@ -1,5 +1,3 @@
-import axios from 'axios'; // import axios from growi dependencies
-import React from 'react';
 import ReactDOM from 'react-dom';
 import { customTagUtils, BasicInterceptor } from 'growi-commons';
 
@@ -23,7 +21,7 @@ export default class ReferenceSection extends BasicInterceptor {
   async process(contextName, ...args) {
     const context = Object.assign(args[0]);
     const parsedHTML = context.parsedHTML;
-    const tagPattern = /secref/;
+    const tagPattern = /secref|refsec/;
     const result = customTagUtils.findTagAndReplace(tagPattern, parsedHTML);
 
     context.parsedHTML = result.html;

@@ -6,12 +6,15 @@ module.exports = (crowi) => {
   const router = express.Router();
 
   const Page = crowi.model('Page');
+  const Config = crowi.model('Config');
   const Revision = crowi.model('Revision');
 
   router.get('/sections', async(req, res) => {
     let page;
     try {
-      page = await Page.findById(req.query.plink, ['revision']).exec();
+      let base_url = Config.getLocalconfig().crowi.url;
+      let url = req.query.plink.replace(base_url + '/', '');
+      page = await Page.findById(url, ['revision']).exec();
     }
     catch(e) {
       return res.status(400).send(e);
